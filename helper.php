@@ -103,9 +103,12 @@ class helper_plugin_task extends DokuWiki_Plugin {
                 if ($filter == 'rejected') {
                     // Only show 'rejected'
                     if ($task['status'] != -1) continue;
+                } else if ($filter == 'open') {
+                    // Only show 'open'
+                    if ($task['status'] != 0) continue;
                 } else if ($filter == 'accepted') {
-                    // Only show 'accepted' and 'started'
-                    if ($task['status'] != 1 && $task['status'] != 2) continue;
+                    // Only show 'accepted'
+                    if ($task['status'] != 1 ) continue;
                 } else if ($filter == 'started') {
                     // Only show 'started'
                     if ($task['status'] != 2) continue;
